@@ -5,7 +5,7 @@ import { RainbowKitProvider, getDefaultWallets } from '@rainbow-me/rainbowkit';
 import { chain, configureChains, createClient, WagmiConfig } from 'wagmi';
 import { publicProvider } from 'wagmi/providers/public';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
-
+import react from 'react';
 const { chains, provider } = configureChains(
   [
     chain.polygonMumbai,
@@ -33,6 +33,9 @@ const wagmiClient = createClient({
   provider,
 });
 export default function App({ Component, pageProps }: AppProps) {
+  const [mounted, setMounted] = react.useState(false);
+  react.useEffect(() => setMounted(true), []);
+  if (!mounted) return null
   return (
     <WagmiConfig client={wagmiClient}>
     <RainbowKitProvider showRecentTransactions={true} chains={chains}>
