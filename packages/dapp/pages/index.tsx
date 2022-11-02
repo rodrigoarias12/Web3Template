@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+//add rainbowkit
+import '@rainbow-me/rainbowkit/styles.css';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useAccount } from "wagmi";
 
 export default function Home() {
+  const { ...isConnected } = useAccount();
   return (
     <div className={styles.container}>
       <Head>
@@ -12,6 +17,19 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+      <ConnectButton
+          showBalance={false}
+          accountStatus={{
+            smallScreen: "avatar",
+            largeScreen: "full",
+          }}
+        />
+         {!isConnected ? (
+        <div className="text-center font-bold text-xl m-8">
+          Please connect to wallet
+        </div>
+      ) : (
+        <>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -52,6 +70,8 @@ export default function Home() {
             </p>
           </a>
         </div>
+        </>
+      )}
       </main>
 
       <footer className={styles.footer}>
