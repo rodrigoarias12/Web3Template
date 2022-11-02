@@ -24,5 +24,8 @@
        polygonMumbai: process.env.POLYGONSCAN_API_KEY || "",
      },
    },
-   
+  typechain: {
+    outDir: "../dapp/typechain-types",
+    target: "ethers-v5",
+  },
  };
