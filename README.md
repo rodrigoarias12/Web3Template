@@ -8,11 +8,12 @@ This template have two folders:
 - Smart Contract Language: Solidity
 - Smart Contract Deploy and Verify Scripts: Javascript
 - Smart Contract Development Environment: [Hardhat](https://hardhat.org/)
+- Smart Contract with typechain auto generated in dapp folder.
 - Frontend Language: React - TypeScript
 - Wallet Connect: [Rainbowkit](https://www.rainbowkit.com/)
 - Interacting with Contract through Frontend: [Wagmi](https://wagmi.sh/)
 - User Interface: [TailwindCSS](https://tailwindcss.com/)
 - RPC provider: [Ankr](https://www.ankr.com/protocol/)
-- Next.js 12
+- Next.js 13
 
 <!-- <img width="1552" alt="Screenshot 2022-07-29 at 5 39 36 AM (1)" src="https://user-images.githubusercontent.com/44579545/182042436-76251795-98f7-4bd0-ab04-49b1f995c316.png"> -->
